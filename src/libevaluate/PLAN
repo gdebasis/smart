@@ -1,0 +1,32 @@
+low-level
+X        qeval (list of rel ret docs, num_rel, num_ret,
+               returns EVAL)
+mid-level
+X        rr_eval_list (SPEC_LIST *
+                EVAL_LIST_LIST
+        tr_eval_list (SPEC_LIST *
+                EVAL_LIST_LIST
+
+conversion
+X        eval_avg (EVAL_LIST_LIST,
+                EVAL_LIST with averages, text description of results
+        eval_std (EVAL_LIST_LIST,
+                EVAL_LIST with std deviations among the queries within each run
+        eval_comp_over (EVAL_LIST_LIST,
+                EVAL_LIST with num queries which have eval > than first EVAL_LIST
+        eval_comp_overequal (EVAL_LIST_LIST,
+                EVAL_LIST with num_queries which have eval >= than first EVAL_LIST
+        eval_comp_ttest (EVAL_LIST_LIST,
+                EVAL_LIST with ttest comparing against first EVAL_LIST
+
+top_level
+        print_eval
+                calls eval_speclist  with spec_list.
+                Use param "eval_convert" (default "average") to decide which
+                      conversion routine to use.
+                Use param "eval_print" (default "short" to decide which
+                      results to print.
+X        print_eval_list (eval_list, sm_buf)
+X        print_eval_list_short (eval_list, sm_buf)
+
+        

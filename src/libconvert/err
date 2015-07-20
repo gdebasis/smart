@@ -1,0 +1,169 @@
+gcc -I/home/mandar/smart/src/h -I/home/mandar/smart/src/liblocal/h -L/home/mandar/smart/src/lib -O -gstabs+ -Wall   -c weight_std.c -o weight_std.o
+In file included from weight_std.c:37:
+/home/mandar/smart/src/h/smart_error.h:12: warning: type defaults to `int' in declaration of `__errno_location'
+ar ruv /home/mandar/smart/src/lib/libconvert.a weight_std.o
+a - weight_std.o
+gcc -I/home/mandar/smart/src/h -I/home/mandar/smart/src/liblocal/h -L/home/mandar/smart/src/lib -O -gstabs+ -Wall   -c weight_sep.c -o weight_sep.o
+In file included from weight_sep.c:33:
+/home/mandar/smart/src/h/smart_error.h:12: warning: type defaults to `int' in declaration of `__errno_location'
+ar ruv /home/mandar/smart/src/lib/libconvert.a weight_sep.o
+a - weight_sep.o
+gcc -I/home/mandar/smart/src/h -I/home/mandar/smart/src/liblocal/h -L/home/mandar/smart/src/lib -O -gstabs+ -Wall   -c weight_no.c -o weight_no.o
+ar ruv /home/mandar/smart/src/lib/libconvert.a weight_no.o
+a - weight_no.o
+gcc -I/home/mandar/smart/src/h -I/home/mandar/smart/src/liblocal/h -L/home/mandar/smart/src/lib -O -gstabs+ -Wall   -c weight_tri.c -o weight_tri.o
+In file included from weight_tri.c:104:
+/home/mandar/smart/src/h/smart_error.h:12: warning: type defaults to `int' in declaration of `__errno_location'
+ar ruv /home/mandar/smart/src/lib/libconvert.a weight_tri.o
+a - weight_tri.o
+gcc -I/home/mandar/smart/src/h -I/home/mandar/smart/src/liblocal/h -L/home/mandar/smart/src/lib -O -gstabs+ -Wall   -c weight_tfidf.c -o weight_tfidf.o
+In file included from weight_tfidf.c:98:
+/home/mandar/smart/src/h/smart_error.h:12: warning: type defaults to `int' in declaration of `__errno_location'
+ar ruv /home/mandar/smart/src/lib/libconvert.a weight_tfidf.o
+a - weight_tfidf.o
+gcc -I/home/mandar/smart/src/h -I/home/mandar/smart/src/liblocal/h -L/home/mandar/smart/src/lib -O -gstabs+ -Wall   -c weights_normu.c -o weights_normu.o
+In file included from weights_normu.c:42:
+/home/mandar/smart/src/h/smart_error.h:12: warning: type defaults to `int' in declaration of `__errno_location'
+ar ruv /home/mandar/smart/src/lib/libconvert.a weights_normu.o
+a - weights_normu.o
+gcc -I/home/mandar/smart/src/h -I/home/mandar/smart/src/liblocal/h -L/home/mandar/smart/src/lib -O -gstabs+ -Wall   -c weights_normc.c -o weights_normc.o
+In file included from weights_normc.c:40:
+/home/mandar/smart/src/h/smart_error.h:12: warning: type defaults to `int' in declaration of `__errno_location'
+ar ruv /home/mandar/smart/src/lib/libconvert.a weights_normc.o
+a - weights_normc.o
+gcc -I/home/mandar/smart/src/h -I/home/mandar/smart/src/liblocal/h -L/home/mandar/smart/src/lib -O -gstabs+ -Wall   -c weights_tf.c -o weights_tf.o
+In file included from weights_tf.c:99:
+/home/mandar/smart/src/h/smart_error.h:12: warning: type defaults to `int' in declaration of `__errno_location'
+ar ruv /home/mandar/smart/src/lib/libconvert.a weights_tf.o
+a - weights_tf.o
+gcc -I/home/mandar/smart/src/h -I/home/mandar/smart/src/liblocal/h -L/home/mandar/smart/src/lib -O -gstabs+ -Wall   -c weights_idf.c -o weights_idf.o
+In file included from weights_idf.c:135:
+/home/mandar/smart/src/h/smart_error.h:12: warning: type defaults to `int' in declaration of `__errno_location'
+ar ruv /home/mandar/smart/src/lib/libconvert.a weights_idf.o
+a - weights_idf.o
+gcc -I/home/mandar/smart/src/h -I/home/mandar/smart/src/liblocal/h -L/home/mandar/smart/src/lib -O -gstabs+ -Wall   -c weights_norm.c -o weights_norm.o
+In file included from weights_norm.c:87:
+/home/mandar/smart/src/h/smart_error.h:12: warning: type defaults to `int' in declaration of `__errno_location'
+ar ruv /home/mandar/smart/src/lib/libconvert.a weights_norm.o
+a - weights_norm.o
+gcc -I/home/mandar/smart/src/h -I/home/mandar/smart/src/liblocal/h -L/home/mandar/smart/src/lib -O -gstabs+ -Wall   -c res_tr.c -o res_tr.o
+In file included from res_tr.c:27:
+/home/mandar/smart/src/h/smart_error.h:12: warning: type defaults to `int' in declaration of `__errno_location'
+ar ruv /home/mandar/smart/src/lib/libconvert.a res_tr.o
+a - res_tr.o
+gcc -I/home/mandar/smart/src/h -I/home/mandar/smart/src/liblocal/h -L/home/mandar/smart/src/lib -O -gstabs+ -Wall   -c sectid_num.c -o sectid_num.o
+In file included from sectid_num.c:37:
+/home/mandar/smart/src/h/smart_error.h:12: warning: type defaults to `int' in declaration of `__errno_location'
+ar ruv /home/mandar/smart/src/lib/libconvert.a sectid_num.o
+a - sectid_num.o
+gcc -I/home/mandar/smart/src/h -I/home/mandar/smart/src/liblocal/h -L/home/mandar/smart/src/lib -O -gstabs+ -Wall   -c text_dict.c -o text_dict.o
+In file included from text_dict.c:32:
+/home/mandar/smart/src/h/smart_error.h:12: warning: type defaults to `int' in declaration of `__errno_location'
+ar ruv /home/mandar/smart/src/lib/libconvert.a text_dict.o
+a - text_dict.o
+gcc -I/home/mandar/smart/src/h -I/home/mandar/smart/src/liblocal/h -L/home/mandar/smart/src/lib -O -gstabs+ -Wall   -c vec_inv.c -o vec_inv.o
+In file included from vec_inv.c:88:
+/home/mandar/smart/src/h/smart_error.h:12: warning: type defaults to `int' in declaration of `__errno_location'
+ar ruv /home/mandar/smart/src/lib/libconvert.a vec_inv.o
+a - vec_inv.o
+gcc -I/home/mandar/smart/src/h -I/home/mandar/smart/src/liblocal/h -L/home/mandar/smart/src/lib -O -gstabs+ -Wall   -c did_vec.c -o did_vec.o
+In file included from did_vec.c:68:
+/home/mandar/smart/src/h/smart_error.h:12: warning: type defaults to `int' in declaration of `__errno_location'
+ar ruv /home/mandar/smart/src/lib/libconvert.a did_vec.o
+a - did_vec.o
+gcc -I/home/mandar/smart/src/h -I/home/mandar/smart/src/liblocal/h -L/home/mandar/smart/src/lib -O -gstabs+ -Wall   -c contok_dict.c -o contok_dict.o
+In file included from contok_dict.c:39:
+/home/mandar/smart/src/h/smart_error.h:12: warning: type defaults to `int' in declaration of `__errno_location'
+ar ruv /home/mandar/smart/src/lib/libconvert.a contok_dict.o
+a - contok_dict.o
+gcc -I/home/mandar/smart/src/h -I/home/mandar/smart/src/liblocal/h -L/home/mandar/smart/src/lib -O -gstabs+ -Wall   -c con_inv.c -o con_inv.o
+In file included from con_inv.c:38:
+/home/mandar/smart/src/h/smart_error.h:12: warning: type defaults to `int' in declaration of `__errno_location'
+ar ruv /home/mandar/smart/src/lib/libconvert.a con_inv.o
+a - con_inv.o
+gcc -I/home/mandar/smart/src/h -I/home/mandar/smart/src/liblocal/h -L/home/mandar/smart/src/lib -O -gstabs+ -Wall   -c con_cw_idf.c -o con_cw_idf.o
+In file included from con_cw_idf.c:36:
+/home/mandar/smart/src/h/smart_error.h:12: warning: type defaults to `int' in declaration of `__errno_location'
+ar ruv /home/mandar/smart/src/lib/libconvert.a con_cw_idf.o
+a - con_cw_idf.o
+gcc -I/home/mandar/smart/src/h -I/home/mandar/smart/src/liblocal/h -L/home/mandar/smart/src/lib -O -gstabs+ -Wall   -c con_cw_cf.c -o con_cw_cf.o
+In file included from con_cw_cf.c:36:
+/home/mandar/smart/src/h/smart_error.h:12: warning: type defaults to `int' in declaration of `__errno_location'
+ar ruv /home/mandar/smart/src/lib/libconvert.a con_cw_cf.o
+a - con_cw_cf.o
+gcc -I/home/mandar/smart/src/h -I/home/mandar/smart/src/liblocal/h -L/home/mandar/smart/src/lib -O -gstabs+ -Wall   -c con_invidf.c -o con_invidf.o
+In file included from con_invidf.c:40:
+/home/mandar/smart/src/h/smart_error.h:12: warning: type defaults to `int' in declaration of `__errno_location'
+ar ruv /home/mandar/smart/src/lib/libconvert.a con_invidf.o
+a - con_invidf.o
+gcc -I/home/mandar/smart/src/h -I/home/mandar/smart/src/liblocal/h -L/home/mandar/smart/src/lib -O -gstabs+ -Wall   -c con_invfreq.c -o con_invfreq.o
+In file included from con_invfreq.c:35:
+/home/mandar/smart/src/h/smart_error.h:12: warning: type defaults to `int' in declaration of `__errno_location'
+ar ruv /home/mandar/smart/src/lib/libconvert.a con_invfreq.o
+a - con_invfreq.o
+gcc -I/home/mandar/smart/src/h -I/home/mandar/smart/src/liblocal/h -L/home/mandar/smart/src/lib -O -gstabs+ -Wall   -c text_dict_o.c -o text_dict_o.o
+In file included from text_dict_o.c:38:
+/home/mandar/smart/src/h/smart_error.h:12: warning: type defaults to `int' in declaration of `__errno_location'
+ar ruv /home/mandar/smart/src/lib/libconvert.a text_dict_o.o
+a - text_dict_o.o
+gcc -I/home/mandar/smart/src/h -I/home/mandar/smart/src/liblocal/h -L/home/mandar/smart/src/lib -O -gstabs+ -Wall   -c vec_inv_o.c -o vec_inv_o.o
+In file included from vec_inv_o.c:42:
+/home/mandar/smart/src/h/smart_error.h:12: warning: type defaults to `int' in declaration of `__errno_location'
+ar ruv /home/mandar/smart/src/lib/libconvert.a vec_inv_o.o
+a - vec_inv_o.o
+gcc -I/home/mandar/smart/src/h -I/home/mandar/smart/src/liblocal/h -L/home/mandar/smart/src/lib -O -gstabs+ -Wall   -c vec_aux_o.c -o vec_aux_o.o
+In file included from vec_aux_o.c:45:
+/home/mandar/smart/src/h/smart_error.h:12: warning: type defaults to `int' in declaration of `__errno_location'
+ar ruv /home/mandar/smart/src/lib/libconvert.a vec_aux_o.o
+a - vec_aux_o.o
+gcc -I/home/mandar/smart/src/h -I/home/mandar/smart/src/liblocal/h -L/home/mandar/smart/src/lib -O -gstabs+ -Wall   -c text_rr_o.c -o text_rr_o.o
+In file included from text_rr_o.c:45:
+/home/mandar/smart/src/h/smart_error.h:12: warning: type defaults to `int' in declaration of `__errno_location'
+ar ruv /home/mandar/smart/src/lib/libconvert.a text_rr_o.o
+a - text_rr_o.o
+gcc -I/home/mandar/smart/src/h -I/home/mandar/smart/src/liblocal/h -L/home/mandar/smart/src/lib -O -gstabs+ -Wall   -c text_tr_o.c -o text_tr_o.o
+In file included from text_tr_o.c:48:
+/home/mandar/smart/src/h/smart_error.h:12: warning: type defaults to `int' in declaration of `__errno_location'
+ar ruv /home/mandar/smart/src/lib/libconvert.a text_tr_o.o
+a - text_tr_o.o
+gcc -I/home/mandar/smart/src/h -I/home/mandar/smart/src/liblocal/h -L/home/mandar/smart/src/lib -O -gstabs+ -Wall   -c tr_rel_o.c -o tr_rel_o.o
+In file included from tr_rel_o.c:34:
+/home/mandar/smart/src/h/smart_error.h:12: warning: type defaults to `int' in declaration of `__errno_location'
+ar ruv /home/mandar/smart/src/lib/libconvert.a tr_rel_o.o
+a - tr_rel_o.o
+gcc -I/home/mandar/smart/src/h -I/home/mandar/smart/src/liblocal/h -L/home/mandar/smart/src/lib -O -gstabs+ -Wall   -c vec_vec_o.c -o vec_vec_o.o
+In file included from vec_vec_o.c:42:
+/home/mandar/smart/src/h/smart_error.h:12: warning: type defaults to `int' in declaration of `__errno_location'
+ar ruv /home/mandar/smart/src/lib/libconvert.a vec_vec_o.o
+a - vec_vec_o.o
+gcc -I/home/mandar/smart/src/h -I/home/mandar/smart/src/liblocal/h -L/home/mandar/smart/src/lib -O -gstabs+ -Wall   -c inv_inv_o.c -o inv_inv_o.o
+In file included from inv_inv_o.c:46:
+/home/mandar/smart/src/h/smart_error.h:12: warning: type defaults to `int' in declaration of `__errno_location'
+ar ruv /home/mandar/smart/src/lib/libconvert.a inv_inv_o.o
+a - inv_inv_o.o
+gcc -I/home/mandar/smart/src/h -I/home/mandar/smart/src/liblocal/h -L/home/mandar/smart/src/lib -O -gstabs+ -Wall   -c tloc_tloc_o.c -o tloc_tloc_o.o
+In file included from tloc_tloc_o.c:49:
+/home/mandar/smart/src/h/smart_error.h:12: warning: type defaults to `int' in declaration of `__errno_location'
+ar ruv /home/mandar/smart/src/lib/libconvert.a tloc_tloc_o.o
+a - tloc_tloc_o.o
+gcc -I/home/mandar/smart/src/h -I/home/mandar/smart/src/liblocal/h -L/home/mandar/smart/src/lib -O -gstabs+ -Wall   -c vecwt_aux_o.c -o vecwt_aux_o.o
+In file included from vecwt_aux_o.c:47:
+/home/mandar/smart/src/h/smart_error.h:12: warning: type defaults to `int' in declaration of `__errno_location'
+ar ruv /home/mandar/smart/src/lib/libconvert.a vecwt_aux_o.o
+a - vecwt_aux_o.o
+gcc -I/home/mandar/smart/src/h -I/home/mandar/smart/src/liblocal/h -L/home/mandar/smart/src/lib -O -gstabs+ -Wall   -c text_vec_o.c -o text_vec_o.o
+In file included from text_vec_o.c:45:
+/home/mandar/smart/src/h/smart_error.h:12: warning: type defaults to `int' in declaration of `__errno_location'
+ar ruv /home/mandar/smart/src/lib/libconvert.a text_vec_o.o
+a - text_vec_o.o
+gcc -I/home/mandar/smart/src/h -I/home/mandar/smart/src/liblocal/h -L/home/mandar/smart/src/lib -O -gstabs+ -Wall   -c weight_o.c -o weight_o.o
+ar ruv /home/mandar/smart/src/lib/libconvert.a weight_o.o
+a - weight_o.o
+gcc -I/home/mandar/smart/src/h -I/home/mandar/smart/src/liblocal/h -L/home/mandar/smart/src/lib -O -gstabs+ -Wall   -c convert.c -o convert.o
+In file included from convert.c:36:
+/home/mandar/smart/src/h/smart_error.h:12: warning: type defaults to `int' in declaration of `__errno_location'
+ar ruv /home/mandar/smart/src/lib/libconvert.a convert.o
+a - convert.o
+echo /home/mandar/smart/src/lib/libconvert.a
+/home/mandar/smart/src/lib/libconvert.a
+rm weight_tfidf.o con_invfreq.o vec_vec_o.o res_tr.o weight_sep.o vec_inv_o.o text_vec_o.o weights_normc.o con_invidf.o weights_norm.o weight_tri.o text_dict_o.o con_cw_cf.o inv_inv_o.o vec_inv.o convert.o did_vec.o weights_normu.o text_dict.o contok_dict.o vecwt_aux_o.o tloc_tloc_o.o sectid_num.o con_cw_idf.o tr_rel_o.o weight_o.o vec_aux_o.o weight_no.o weight_std.o text_rr_o.o weights_tf.o text_tr_o.o weights_idf.o con_inv.o

@@ -1,0 +1,15 @@
+#
+
+#unstemmed_spec gives unstemmed dictionary and collstats_file.
+set unstemmed_spec = spec
+set stemmed_spec = /home/smart/smart.13.1.mitra/src/test_adi/indexed/spec
+set stemmed_q = /home/smart/smart.13.1.mitra/src/test_adi/indexed/query.atc
+
+smprint -s $stemmed_spec vec_dict $stemmed_q > out.q
+sort +4 out.q > out.qs
+
+smart convert $unstemmed_spec proc local.convert.obj.destem out ./out.stem_nostem temp_dict_file ./stem.temp
+
+sort ./out.stem_nostem > ./out.stems
+
+join -j1 5 -j2 1 -o 1.1 1.2 1.3 1.4 2.2 ./out.qs ./out.stems | sort +0n +1n +2n

@@ -1,0 +1,157 @@
+infoneed.sect_num		0
+infoneed.num_ops		31
+
+infoneed.op.0.name		"DN2"
+infoneed.op.0.parse		local.infoneed.op.parse.dn2
+infoneed.op.0.retr_vec		local.infoneed.op.vector.dn2
+infoneed.op.0.retr_invfile	local.infoneed.op.invfile.dn2
+
+infoneed.op.1.name		"INFO_NEED"
+infoneed.op.1.parse		local.infoneed.op.parse.info_need
+infoneed.op.1.retr_vec		local.infoneed.op.vector.dn2
+infoneed.op.1.retr_invfile	local.infoneed.op.invfile.dn2
+
+infoneed.op.2.name		"QUOTED_TEXT"
+infoneed.op.2.parse		local.infoneed.op.parse.quoted_text
+infoneed.op.2.retr_vec		local.infoneed.op.vector.dn2
+infoneed.op.2.retr_invfile	local.infoneed.op.invfile.dn2
+
+infoneed.op.3.name		"FULL_TERM"
+infoneed.op.3.parse		local.infoneed.op.parse.full_term
+infoneed.op.3.retr_vec		local.infoneed.op.vector.dn2
+infoneed.op.3.retr_invfile	local.infoneed.op.invfile.dn2
+
+infoneed.op.4.name		"INDEPENDENT"
+infoneed.op.4.parse		local.infoneed.op.parse.independent
+infoneed.op.4.retr_vec		local.infoneed.op.vector.dn2
+infoneed.op.4.retr_invfile	local.infoneed.op.invfile.dn2
+
+infoneed.op.5.name		"AND"
+infoneed.op.5.parse		local.infoneed.op.parse.and
+infoneed.op.5.retr_vec		local.infoneed.op.vector.dn2
+infoneed.op.5.retr_invfile	local.infoneed.op.invfile.dn2
+
+infoneed.op.6.name		"OR"
+infoneed.op.6.parse		local.infoneed.op.parse.or
+infoneed.op.6.retr_vec		local.infoneed.op.vector.dn2
+infoneed.op.6.retr_invfile	local.infoneed.op.invfile.dn2
+
+infoneed.op.7.name		"AND-NOT"
+infoneed.op.7.parse		local.infoneed.op.parse.and_not
+infoneed.op.7.retr_vec		local.infoneed.op.vector.dn2
+infoneed.op.7.retr_invfile	local.infoneed.op.invfile.dn2
+
+infoneed.op.8.name		"HEAD_RELATION"
+infoneed.op.8.parse		local.infoneed.op.parse.head_relation
+infoneed.op.8.retr_vec		local.infoneed.op.vector.dn2
+infoneed.op.8.retr_invfile	local.infoneed.op.invfile.dn2
+
+infoneed.op.9.name		"OTHER_OPER"
+infoneed.op.9.parse		local.infoneed.op.parse.other_oper
+infoneed.op.9.retr_vec		local.infoneed.op.vector.dn2
+infoneed.op.9.retr_invfile	local.infoneed.op.invfile.dn2
+
+infoneed.op.10.name		"OTHER_OPER_ARGS"
+infoneed.op.10.parse		local.infoneed.op.parse.other_oper_args
+infoneed.op.10.retr_vec		local.infoneed.op.vector.dn2
+infoneed.op.10.retr_invfile	local.infoneed.op.invfile.dn2
+
+infoneed.op.11.name		"COMMENT"
+infoneed.op.11.parse		local.infoneed.op.parse.comment
+infoneed.op.11.retr_vec		local.infoneed.op.vector.dn2
+infoneed.op.11.retr_invfile	local.infoneed.op.invfile.dn2
+
+infoneed.op.12.name		"ANN_ATTR"
+infoneed.op.12.parse		local.infoneed.op.parse.ann_attr
+infoneed.op.12.retr_vec		local.infoneed.op.vector.dn2
+infoneed.op.12.retr_invfile	local.infoneed.op.invfile.dn2
+
+infoneed.op.13.name		"ANN_TYPE"
+infoneed.op.13.parse		local.infoneed.op.parse.ann_type
+infoneed.op.13.retr_vec		local.infoneed.op.vector.dn2
+infoneed.op.13.retr_invfile	local.infoneed.op.invfile.dn2
+
+infoneed.op.14.name		"ATTR_NAME"
+infoneed.op.14.parse		local.infoneed.op.parse.attr_name
+infoneed.op.14.retr_vec		local.infoneed.op.vector.dn2
+infoneed.op.14.retr_invfile	local.infoneed.op.invfile.dn2
+
+infoneed.op.15.name		"ATTR_TYPE"
+infoneed.op.15.parse		local.infoneed.op.parse.attr_type
+infoneed.op.15.retr_vec		local.infoneed.op.vector.dn2
+infoneed.op.15.retr_invfile	local.infoneed.op.invfile.dn2
+
+infoneed.op.16.name		"ATTR_VALUE"
+infoneed.op.16.parse		local.infoneed.op.parse.attr_value
+infoneed.op.16.retr_vec		local.infoneed.op.vector.dn2
+infoneed.op.16.retr_invfile	local.infoneed.op.invfile.dn2
+
+infoneed.op.17.name		"APP_SE_INFO"
+infoneed.op.17.parse		local.infoneed.op.parse.app_se_info
+infoneed.op.17.retr_vec		local.infoneed.op.vector.dn2
+infoneed.op.17.retr_invfile	local.infoneed.op.invfile.dn2
+
+infoneed.op.18.name		"SE_APP_INFO"
+infoneed.op.18.parse		local.infoneed.op.parse.se_app_info
+infoneed.op.18.retr_vec		local.infoneed.op.vector.dn2
+infoneed.op.18.retr_invfile	local.infoneed.op.invfile.dn2
+
+infoneed.op.19.name		"SE_APP_HELP"
+infoneed.op.19.parse		local.infoneed.op.parse.se_app_help
+infoneed.op.19.retr_vec		local.infoneed.op.vector.dn2
+infoneed.op.19.retr_invfile	local.infoneed.op.invfile.dn2
+
+infoneed.op.20.name		"SE_APP_EXPL"
+infoneed.op.20.parse		local.infoneed.op.parse.se_app_expl
+infoneed.op.20.retr_vec		local.infoneed.op.vector.dn2
+infoneed.op.20.retr_invfile	local.infoneed.op.invfile.dn2
+
+infoneed.op.21.name		"SE_APP_MATCHES"
+infoneed.op.21.parse		local.infoneed.op.parse.se_app_matches
+infoneed.op.21.retr_vec		local.infoneed.op.vector.dn2
+infoneed.op.21.retr_invfile	local.infoneed.op.invfile.dn2
+
+infoneed.op.22.name		"MERGE_INFO"
+infoneed.op.22.parse		local.infoneed.op.parse.merge_info
+infoneed.op.22.retr_vec		local.infoneed.op.vector.dn2
+infoneed.op.22.retr_invfile	local.infoneed.op.invfile.dn2
+
+infoneed.op.23.name		"WEIGHT"
+infoneed.op.23.parse		local.infoneed.op.parse.weight
+infoneed.op.23.retr_vec		local.infoneed.op.vector.dn2
+infoneed.op.23.retr_invfile	local.infoneed.op.invfile.dn2
+
+infoneed.op.24.name		"DOC_COLLECTION"
+infoneed.op.24.parse		local.infoneed.op.parse.doc_collection
+infoneed.op.24.retr_vec		local.infoneed.op.vector.dn2
+infoneed.op.24.retr_invfile	local.infoneed.op.invfile.dn2
+
+infoneed.op.25.name		"RESTRICT_SET"
+infoneed.op.25.parse		local.infoneed.op.parse.restrict_set
+infoneed.op.25.retr_vec		local.infoneed.op.vector.dn2
+infoneed.op.25.retr_invfile	local.infoneed.op.invfile.dn2
+
+infoneed.op.26.name		"DOCID"
+infoneed.op.26.parse		local.infoneed.op.parse.docid
+infoneed.op.26.retr_vec		local.infoneed.op.vector.dn2
+infoneed.op.26.retr_invfile	local.infoneed.op.invfile.dn2
+
+infoneed.op.27.name		"FEEDBACK_INFO"
+infoneed.op.27.parse		local.infoneed.op.parse.feedback_info
+infoneed.op.27.retr_vec		local.infoneed.op.vector.dn2
+infoneed.op.27.retr_invfile	local.infoneed.op.invfile.dn2
+
+infoneed.op.28.name		"DOCID_REL"
+infoneed.op.28.parse		local.infoneed.op.parse.docid_rel
+infoneed.op.28.retr_vec		local.infoneed.op.vector.dn2
+infoneed.op.28.retr_invfile	local.infoneed.op.invfile.dn2
+
+infoneed.op.29.name		"TEXT_REL"
+infoneed.op.29.parse		local.infoneed.op.parse.text_rel
+infoneed.op.29.retr_vec		local.infoneed.op.vector.dn2
+infoneed.op.29.retr_invfile	local.infoneed.op.invfile.dn2
+
+infoneed.op.30.name		"CONTEXT"
+infoneed.op.30.parse		local.infoneed.op.parse.context
+infoneed.op.30.retr_vec		local.infoneed.op.vector.dn2
+infoneed.op.30.retr_invfile	local.infoneed.op.invfile.dn2

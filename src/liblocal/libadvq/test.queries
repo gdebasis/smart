@@ -1,0 +1,109 @@
+<DN2> <INFO_NEED> <DOC_COLLECTION> foo <\DOC_COLLECTION>
+"information retrieval"
+<\INFO_NEED> <\DN2>
+
+
+<DN2> <INFO_NEED> <DOC_COLLECTION> foo </DOC_COLLECTION>
+"information retrieval"
+</INFO_NEED> </DN2>
+
+
+<DN2> <INFO_NEED> <DOC_COLLECTION> foo </DOC_COLLECTION>
+<QUOTED_TEXT> information retrieval </QUOTED_TEXT>
+</INFO_NEED> </DN2>
+
+-----
+
+op -2 covers '<DN2> <INFO_NEED> <DOC_COLLECTION> foo </DOC_COLLECTION>
+<QUOTED_TEXT> information retrieval </QUOTED_TEXT>
+</INFO_NEED> </DN2>'
+
+    op 0 covers '<DN2> <INFO_NEED> <DOC_COLLECTION> foo </DOC_COLLECTION>
+<QUOTED_TEXT> information retrieval </QUOTED_TEXT>
+</INFO_NEED> </DN2>'
+
+        op 1 covers '<INFO_NEED> <DOC_COLLECTION> foo </DOC_COLLECTION>
+<QUOTED_TEXT> information retrieval </QUOTED_TEXT>
+</INFO_NEED>'
+
+            op 24 covers '<DOC_COLLECTION> foo </DOC_COLLECTION>'
+
+            op 2 covers '<QUOTED_TEXT> information retrieval </QUOTED_TEXT>'
+            concepts:
+ <822, 1.000000>
+ <2369, 1.000000>
+
+-----
+
+ADV_VEC 1.11.8411991    Flags: 0000    Text:
+<DN2> <INFO_NEED> <DOC_COLLECTION> foo </DOC_COLLECTION>
+<QUOTED_TEXT> information retrieval </QUOTED_TEXT>
+</INFO_NEED> </DN2>
+
+
+Mergetype:     Mergedata: 
+
+1 annotations starting at 0 for whole query
+Annotations (3):
+0:  type 1 <<DN2> <INFO_NEED> <DOC_COLLECTION> foo </DOC_COLLECTION>
+<QUOTED_TEXT> information retrieval </QUOTED_TEXT>
+</INFO_NEED> </DN2>>
+1:  type 1 <<INFO_NEED> <DOC_COLLECTION> foo </DOC_COLLECTION>
+<QUOTED_TEXT> information retrieval </QUOTED_TEXT>
+</INFO_NEED>>
+2:  type 2 < information retrieval >
+
+Ann_attrs (0):
+
+Op_nodes (0):
+
+Leaf_nodes (2):
+0:  ctype 0  concept 822  ann_attr_ptrs 0 at 0
+1:  ctype 0  concept 2369  ann_attr_ptrs 0 at 0
+
+Tree_nodes (2):
+0:  info 0  wt 1.000000  child -1  sibling 1
+        annotations 1 at 2
+1:  info 1  wt 1.000000  child -1  sibling -1
+        annotations 1 at 2
+
+Info_needs (1):
+0:  head_node 0  wt 1.000000  restrict_set node -1  docs 0 at 0
+        collections 1 at 0  annotations 1 at 1
+
+Collections (1):
+0: < foo > 1
+
+Docids (0):
+
+-----
+
+<DN2> <APP_SE_INFO NUMBER_TO_RETRIEVE=15 NOSTEMMING>  </APP_SE_INFO>
+<MERGE_INFO MERGETYPE=engine_choice> </MERGE_INFO>
+<INFO_NEED> <DOC_COLLECTION> foo </DOC_COLLECTION>
+<RESTRICT_SET> <FULL_TERM> "required concept" </FULL_TERM> </RESTRICT_SET>
+<FEEDBACK_INFO> <TEXT_REL NONREL> useless words </TEXT_REL> </FEEDBACK_INFO>
+<AND FUZZY=0.5 WEIGHT=1.5>
+<CONTEXT DISTANCE=9 UNORDERED>
+<ANN_ATTR> <ANN_TYPE> words </ANN_TYPE> </ANN_ATTR> </CONTEXT>
+<FULL_TERM WEIGHT=2>
+<QUOTED_TEXT> information retrieval </QUOTED_TEXT> </FULL_TERM>
+<OR EXACT>
+"computer software"
+"computer program"
+</OR> </AND> </INFO_NEED> </DN2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,348 @@
+munin$ smart top.inter spec.infoneed.test
+
+    Commands for '?' Menu: Standard Commands
+titles      : Show list of titles retrieved for this query again
+next        : Show the next ranked document (default action)
+dtext       : Show document <did>
+current     : Show the current document again
+more        : Retrieve more documents for this query, using only original query
+run         : Run new query.  Retrieve documents after getting a new query.
+feedback_list: Retrieve more documents for this query, 
+              using original query plus the given list of useful documents
+fb_run      : Run new query, but do feedback immediately on it
+quit        : Quit SMART. Any designated actions are done
+exit        : Exit SMART. No designated actions are done
+save        : Append copy of output of last command to the named file
+help        : Show list of possible commands ('all' gives all menus)
+
+Help is available for menus ? A E C
+Smart (ntq?): run
+Trace: entering init_infoneed_index
+Trace: entering init_infoneed_parse
+Trace: leaving init_infoneed_parse
+Trace: entering init_ifn_to_advv
+Trace: leaving init_ifn_to_advv
+Trace: leaving init_infoneed_index
+Please type a new query, consisting of descriptive natural language words
+and phrases, ending with a line of a single '.'
+<DN2> <APP_SE_INFO NUMBER_TO_RETRIEVE=15 NOSTEMMING>  </APP_SE_INFO>
+<MERGE_INFO MERGETYPE=engine_choice> </MERGE_INFO>
+<INFO_NEED> <DOC_COLLECTION> foo </DOC_COLLECTION>
+<RESTRICT_SET> <FULL_TERM> "required concept" </FULL_TERM> </RESTRICT_SET>
+<FEEDBACK_INFO> <TEXT_REL NONREL> useless words </TEXT_REL> </FEEDBACK_INFO>
+<AND FUZZY=0.5 WEIGHT=1.5>
+<CONTEXT DISTANCE=9 UNORDERED>
+<ANN_ATTR> <ANN_TYPE> words </ANN_TYPE> </ANN_ATTR> </CONTEXT>
+<FULL_TERM WEIGHT=2>
+<QUOTED_TEXT> information retrieval </QUOTED_TEXT> </FULL_TERM>
+<OR EXACT>
+"computer software"
+"computer program"
+</OR> </AND> </INFO_NEED> </DN2>
+
+.
+Trace: entering infoneed_index
+Trace: entering infoneed_parse
+Trace: entering init_ifn_parse_dn2
+Trace: leaving init_ifn_parse_dn2
+Trace: entering ifn_parse_dn2
+Trace: entering init_ifn_parse_apseinfo
+Trace: leaving init_ifn_parse_apseinfo
+Trace: entering ifn_parse_apseinfo
+Trace: leaving ifn_parse_apseinfo
+Trace: entering init_ifn_parse_mergeinfo
+Trace: leaving init_ifn_parse_mergeinfo
+Trace: entering ifn_parse_mergeinfo
+Trace: leaving ifn_parse_mergeinfo
+Trace: entering init_ifn_parse_ineed
+Trace: leaving init_ifn_parse_ineed
+Trace: entering ifn_parse_ineed
+Trace: entering init_ifn_parse_collect
+Trace: leaving init_ifn_parse_collect
+Trace: entering ifn_parse_collect
+Trace: leaving ifn_parse_collect
+Trace: entering init_ifn_parse_restrict
+Trace: leaving init_ifn_parse_restrict
+Trace: entering ifn_parse_restrict
+Trace: entering init_ifn_parse_fterm
+Trace: leaving init_ifn_parse_fterm
+Trace: entering ifn_parse_fterm
+Trace: leaving ifn_parse_fterm
+Trace: leaving ifn_parse_restrict
+Trace: entering init_ifn_parse_fdbkinfo
+Trace: leaving init_ifn_parse_fdbkinfo
+Trace: entering ifn_parse_fdbkinfo
+Trace: entering init_ifn_parse_textrel
+Trace: leaving init_ifn_parse_textrel
+Trace: entering ifn_parse_textrel
+Trace: leaving ifn_parse_textrel
+Trace: leaving ifn_parse_fdbkinfo
+Trace: entering init_ifn_parse_and
+Trace: leaving init_ifn_parse_and
+Trace: entering ifn_parse_and
+Trace: entering init_ifn_parse_context
+Trace: leaving init_ifn_parse_context
+Trace: entering ifn_parse_context
+Trace: entering init_ifn_parse_annattr
+Trace: leaving init_ifn_parse_annattr
+Trace: entering ifn_parse_annattr
+Trace: entering init_ifn_parse_anntype
+Trace: leaving init_ifn_parse_anntype
+Trace: entering ifn_parse_anntype
+Trace: leaving ifn_parse_anntype
+Trace: leaving ifn_parse_annattr
+Trace: leaving ifn_parse_context
+Trace: entering ifn_parse_fterm
+Trace: entering init_ifn_parse_qtext
+Trace: leaving init_ifn_parse_qtext
+Trace: entering ifn_parse_qtext
+Trace: leaving ifn_parse_qtext
+Trace: leaving ifn_parse_fterm
+Trace: entering init_ifn_parse_or
+Trace: leaving init_ifn_parse_or
+Trace: entering ifn_parse_or
+Trace: leaving ifn_parse_or
+Trace: leaving ifn_parse_and
+Trace: leaving ifn_parse_ineed
+Trace: leaving ifn_parse_dn2
+op -2 covers '<DN2> <APP_SE_INFO NUMBER_TO_RETRIEVE=15 NOSTEMMING>  </APP_SE_INFO>
+<MERGE_INFO MERGETYPE=engine_choice> </MERGE_INFO>
+<INFO_NEED> <DOC_COLLECTION> foo </DOC_COLLECTION>
+<RESTRICT_SET> <FULL_TERM> "required concept" </FULL_TERM> </RESTRICT_SET>
+<FEEDBACK_INFO> <TEXT_REL NONREL> useless words </TEXT_REL> </FEEDBACK_INFO>
+<AND FUZZY=0.5 WEIGHT=1.5>
+<CONTEXT DISTANCE=9 UNORDERED>
+<ANN_ATTR> <ANN_TYPE> words </ANN_TYPE> </ANN_ATTR> </CONTEXT>
+<FULL_TERM WEIGHT=2>
+<QUOTED_TEXT> information retrieval </QUOTED_TEXT> </FULL_TERM>
+<OR EXACT>
+"computer software"
+"computer program"
+</OR> </AND> </INFO_NEED> </DN2>'
+
+    op 0 covers '<DN2> <APP_SE_INFO NUMBER_TO_RETRIEVE=15 NOSTEMMING>  </APP_SE_INFO>
+<MERGE_INFO MERGETYPE=engine_choice> </MERGE_INFO>
+<INFO_NEED> <DOC_COLLECTION> foo </DOC_COLLECTION>
+<RESTRICT_SET> <FULL_TERM> "required concept" </FULL_TERM> </RESTRICT_SET>
+<FEEDBACK_INFO> <TEXT_REL NONREL> useless words </TEXT_REL> </FEEDBACK_INFO>
+<AND FUZZY=0.5 WEIGHT=1.5>
+<CONTEXT DISTANCE=9 UNORDERED>
+<ANN_ATTR> <ANN_TYPE> words </ANN_TYPE> </ANN_ATTR> </CONTEXT>
+<FULL_TERM WEIGHT=2>
+<QUOTED_TEXT> information retrieval </QUOTED_TEXT> </FULL_TERM>
+<OR EXACT>
+"computer software"
+"computer program"
+</OR> </AND> </INFO_NEED> </DN2>'
+
+        op 17 covers '<APP_SE_INFO NUMBER_TO_RETRIEVE=15 NOSTEMMING>  </APP_SE_INFO>'
+
+         stem=0 num_ret_docs=15
+
+        op 22 covers '<MERGE_INFO MERGETYPE=engine_choice> </MERGE_INFO>'
+
+         mergetype=engine_choice
+
+        op 1 covers '<INFO_NEED> <DOC_COLLECTION> foo </DOC_COLLECTION>
+<RESTRICT_SET> <FULL_TERM> "required concept" </FULL_TERM> </RESTRICT_SET>
+<FEEDBACK_INFO> <TEXT_REL NONREL> useless words </TEXT_REL> </FEEDBACK_INFO>
+<AND FUZZY=0.5 WEIGHT=1.5>
+<CONTEXT DISTANCE=9 UNORDERED>
+<ANN_ATTR> <ANN_TYPE> words </ANN_TYPE> </ANN_ATTR> </CONTEXT>
+<FULL_TERM WEIGHT=2>
+<QUOTED_TEXT> information retrieval </QUOTED_TEXT> </FULL_TERM>
+<OR EXACT>
+"computer software"
+"computer program"
+</OR> </AND> </INFO_NEED>'
+
+            op 24 covers '<DOC_COLLECTION> foo </DOC_COLLECTION>'
+
+            op 25 covers '<RESTRICT_SET> <FULL_TERM> "required concept" </FULL_TERM> </RESTRICT_SET>'
+
+                op 3 covers '<FULL_TERM> "required concept" </FULL_TERM>'
+
+                    op 2 covers '"required concept"'
+
+                    concepts:
+ <1538, 1.000000>
+ <2235, 1.000000>
+
+
+            op 27 covers '<FEEDBACK_INFO> <TEXT_REL NONREL> useless words </TEXT_REL> </FEEDBACK_INFO>'
+
+                op 29 covers '<TEXT_REL NONREL> useless words </TEXT_REL>'
+
+            op 5 covers '<AND FUZZY=0.5 WEIGHT=1.5>
+<CONTEXT DISTANCE=9 UNORDERED>
+<ANN_ATTR> <ANN_TYPE> words </ANN_TYPE> </ANN_ATTR> </CONTEXT>
+<FULL_TERM WEIGHT=2>
+<QUOTED_TEXT> information retrieval </QUOTED_TEXT> </FULL_TERM>
+<OR EXACT>
+"computer software"
+"computer program"
+</OR> </AND>'
+
+             fuzziness=0.500000 weight=1.500000
+
+                op 30 covers '<CONTEXT DISTANCE=9 UNORDERED>
+<ANN_ATTR> <ANN_TYPE> words </ANN_TYPE> </ANN_ATTR> </CONTEXT>'
+
+                 distance=9
+
+                    op 12 covers '<ANN_ATTR> <ANN_TYPE> words </ANN_TYPE> </ANN_ATTR>'
+
+                        op 13 covers '<ANN_TYPE> words </ANN_TYPE>'
+
+                op 3 covers '<FULL_TERM WEIGHT=2>
+<QUOTED_TEXT> information retrieval </QUOTED_TEXT> </FULL_TERM>'
+
+                 weight=2.000000
+
+                    op 2 covers '<QUOTED_TEXT> information retrieval </QUOTED_TEXT>'
+
+                    concepts:
+ <625, 1.000000>
+ <3267, 1.000000>
+
+
+                op 6 covers '<OR EXACT>
+"computer software"
+"computer program"
+</OR>'
+
+                    op 2 covers '"computer software"'
+
+                    concepts:
+ <411, 1.000000>
+
+
+                    op 2 covers '"computer program"'
+
+                    concepts:
+ <411, 1.000000>
+ <3168, 1.000000>
+
+
+Trace: leaving infoneed_parse
+Trace: entering ifn_to_advv
+---------- After feedback:
+ADV_VEC 1.11.8412056    Flags: 0000    Text:
+<DN2> <APP_SE_INFO NUMBER_TO_RETRIEVE=15 NOSTEMMING>  </APP_SE_INFO>
+<MERGE_INFO MERGETYPE=engine_choice> </MERGE_INFO>
+<INFO_NEED> <DOC_COLLECTION> foo </DOC_COLLECTION>
+<RESTRICT_SET> <FULL_TERM> "required concept" </FULL_TERM> </RESTRICT_SET>
+<FEEDBACK_INFO> <TEXT_REL NONREL> useless words </TEXT_REL> </FEEDBACK_INFO>
+<AND FUZZY=0.5 WEIGHT=1.5>
+<CONTEXT DISTANCE=9 UNORDERED>
+<ANN_ATTR> <ANN_TYPE> words </ANN_TYPE> </ANN_ATTR> </CONTEXT>
+<FULL_TERM WEIGHT=2>
+<QUOTED_TEXT> information retrieval </QUOTED_TEXT> </FULL_TERM>
+<OR EXACT>
+"computer software"
+"computer program"
+</OR> </AND> </INFO_NEED> </DN2>
+
+
+Mergetype: engine_choice    Mergedata:  
+
+2 annotations starting at 0 for whole query
+Annotations (11):
+0:  type SUBTREE <<DN2> <APP_SE_INFO NUMBER_TO_RETRIEVE=15 NOSTEMMING>  </APP_SE_INFO>
+<MERGE_INFO MERGETYPE=engine_choice> </MERGE_INFO>
+<INFO_NEED> <DOC_COLLECTION> foo </DOC_COLLECTION>
+<RESTRICT_SET> <FULL_TERM> "required concept" </FULL_TERM> </RESTRICT_SET>
+<FEEDBACK_INFO> <TEXT_REL NONREL> useless words </TEXT_REL> </FEEDBACK_INFO>
+<AND FUZZY=0.5 WEIGHT=1.5>
+<CONTEXT DISTANCE=9 UNORDERED>
+<ANN_ATTR> <ANN_TYPE> words </ANN_TYPE> </ANN_ATTR> </CONTEXT>
+<FULL_TERM WEIGHT=2>
+<QUOTED_TEXT> information retrieval </QUOTED_TEXT> </FULL_TERM>
+<OR EXACT>
+"computer software"
+"computer program"
+</OR> </AND> </INFO_NEED> </DN2>>
+1:  APP_SE from 52 to 53 getting 15 docs between 0.000000 and 1.000000 with flags 0003
+2:  type SUBTREE <<INFO_NEED> <DOC_COLLECTION> foo </DOC_COLLECTION>
+<RESTRICT_SET> <FULL_TERM> "required concept" </FULL_TERM> </RESTRICT_SET>
+<FEEDBACK_INFO> <TEXT_REL NONREL> useless words </TEXT_REL> </FEEDBACK_INFO>
+<AND FUZZY=0.5 WEIGHT=1.5>
+<CONTEXT DISTANCE=9 UNORDERED>
+<ANN_ATTR> <ANN_TYPE> words </ANN_TYPE> </ANN_ATTR> </CONTEXT>
+<FULL_TERM WEIGHT=2>
+<QUOTED_TEXT> information retrieval </QUOTED_TEXT> </FULL_TERM>
+<OR EXACT>
+"computer software"
+"computer program"
+</OR> </AND> </INFO_NEED>>
+3:  type SUBTREE <<FULL_TERM> "required concept" </FULL_TERM>>
+4:  type LEAF <required concept>
+5:  type SUBTREE <<AND FUZZY=0.5 WEIGHT=1.5>
+<CONTEXT DISTANCE=9 UNORDERED>
+<ANN_ATTR> <ANN_TYPE> words </ANN_TYPE> </ANN_ATTR> </CONTEXT>
+<FULL_TERM WEIGHT=2>
+<QUOTED_TEXT> information retrieval </QUOTED_TEXT> </FULL_TERM>
+<OR EXACT>
+"computer software"
+"computer program"
+</OR> </AND>>
+6:  type SUBTREE <<FULL_TERM WEIGHT=2>
+<QUOTED_TEXT> information retrieval </QUOTED_TEXT> </FULL_TERM>>
+7:  type LEAF < information retrieval >
+8:  type SUBTREE <<OR EXACT>
+"computer software"
+"computer program"
+</OR>>
+9:  type LEAF <computer software>
+10:  type LEAF <computer program>
+
+Ann_attrs (1):
+0:  type  words  with attribute <,,>
+
+Op_nodes (2):
+0:  op 5  hr_type -1  p 0.500000
+	context  ann_attr_ptr 0  distance 9  flags 0000
+1:  op 6  hr_type -1  p 1.000000
+	context  ann_attr_ptr -1  distance -1  flags 0000
+
+Leaf_nodes (7):
+0:  ctype 0  concept 1538  ann_attr_ptrs 0 at 0
+1:  ctype 0  concept 2235  ann_attr_ptrs 0 at 0
+2:  ctype 0  concept 625  ann_attr_ptrs 0 at 1
+3:  ctype 0  concept 3267  ann_attr_ptrs 0 at 1
+4:  ctype 0  concept 411  ann_attr_ptrs 0 at 1
+5:  ctype 0  concept 411  ann_attr_ptrs 0 at 1
+6:  ctype 0  concept 3168  ann_attr_ptrs 0 at 1
+
+Tree_nodes (9):
+0:  info 0  wt 1.000000  child -1  sibling 1
+	annotations 2 at 3
+1:  info 1  wt 1.000000  child -1  sibling -1
+	annotations 2 at 3
+2:  info 0  wt 1.500000  child 3  sibling -1
+	annotations 1 at 5
+3:  info 2  wt 2.000000  child -1  sibling 4
+	annotations 2 at 6
+4:  info 3  wt 2.000000  child -1  sibling 5
+	annotations 2 at 6
+5:  info 1  wt 1.000000  child 6  sibling -1
+	annotations 1 at 8
+6:  info 4  wt 1.000000  child -1  sibling 7
+	annotations 1 at 9
+7:  info 5  wt 1.000000  child -1  sibling 8
+	annotations 1 at 10
+8:  info 6  wt 1.000000  child -1  sibling -1
+	annotations 1 at 10
+
+Info_needs (1):
+0:  head_node 2  wt 1.000000  restrict_set node 0  docs 0 at 0
+	collections 1 at 0  annotations 3 at 2
+
+Collections (1):
+0: < foo > 1
+
+Docids (0):
+Trace: leaving ifn_to_advv
+Trace: leaving infoneed_index
+Segmentation fault (core dumped)
+munin$ exit

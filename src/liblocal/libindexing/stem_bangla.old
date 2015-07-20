@@ -1,0 +1,114 @@
+#ifdef RCSID
+static char rcsid[] = "$Header: /home/smart/release/src/libindexing/stem_bangla.c,v 11.2 1993/02/03 16:51:05 smart Exp $";
+#endif
+
+/* Copyright (c) 1991, 1990, 1984 - Gerard Salton, Chris Buckley. 
+
+   Permission is granted for use of this file in unmodified form for
+   research purposes. Please contact the SMART project to obtain 
+   permission for other uses.
+*/
+
+/********************   PROCEDURE DESCRIPTION   ************************
+ *0 Simple stemming procedure for Bangla
+ *1 local.index.stem.bangla
+ *2 stem_bangla (word, output_word, inst)
+ *3   char *word;
+ *3   char **output_word;
+ *3   int inst;
+ *4 init_stem_bangla (spec, unused)
+ *5   "index.stem.trace"
+ *4 close_stem_bangla (inst)
+
+ *7
+
+ *9 Warning: Changes input parameter (stemming done in place).
+***********************************************************************/
+
+#include "common.h"
+#include "param.h"
+#include "functions.h"
+#include "smart_error.h"
+#include "spec.h"
+#include "trace.h"
+#include "8bit-iscii.h"
+
+static SPEC_PARAM spec_args[] = {
+    TRACE_PARAM ("local.index.stem.trace")
+};
+static int num_spec_args = sizeof (spec_args) / sizeof (spec_args[0]);
+
+static char *bangla();
+
+int
+init_stem_bangla (spec, unused)
+SPEC *spec;
+char *unused;
+{
+    /* Lookup the values of the relevant parameters */
+    if (UNDEF == lookup_spec (spec, &spec_args[0], num_spec_args)) {
+        return (UNDEF);
+    }
+
+    PRINT_TRACE (2, print_string, "Trace: entering/leaving init_stem_bangla");
+    return (0);
+}
+
+int
+stem_bangla (word, output_word, inst)
+char *word;                     /* word to be stemmed */
+char **output_word;
+int inst;
+{
+    PRINT_TRACE (2, print_string, "Trace: entering stem_bangla");
+    PRINT_TRACE (6, print_string, word);
+
+    *output_word = bangla(word);
+
+    PRINT_TRACE (4, print_string, *output_word);
+    PRINT_TRACE (2, print_string, "Trace: leaving stem_bangla");
+    return (0);
+}
+
+int
+close_stem_bangla (inst)
+int inst;
+{
+    PRINT_TRACE (2,print_string, "Trace: entering/leaving close_stem_bangla");
+    return (0);
+}
+
+
+static char * 
+bangla(word)
+char *word;
+{
+    unsigned char *pp;
+    int len = strlen(word);
+
+    if (len <= 2) return(word);
+
+    pp = &word[len - 1];
+    if (*pp == r) { /* -r, -er (possessive/shoshThi) */
+	pp--;
+	if (*pp == E) pp--;
+    }
+    else if (*pp == E) { /* -E, -tE, -kE */  
+	pp--;
+	if (*pp == t || *pp == k) pp--;
+    }
+    else if (*pp == i) pp--; /* terminal hroshwo i (for emphasis, etc.) */
+    else if (*pp == I && *(pp-1) == T) pp -= 2; /* -TI */
+    else if (*pp == o) pp--; /* terminal o (for emphasis, etc.) */
+    else if (len > 4 && 
+	     *pp == I && *(pp-1) == l && *(pp-2) == U && *(pp-3) == g)
+	pp -= 4; /* gUlI */
+    else if (*pp == y) pp--; /* y (borshay, kolkatay, etc.) */
+    else if (*pp == AA && *(pp-1) == r) { /* -raa, -eraa */
+	pp -= 2;
+	if (*pp == E) pp--;
+    }
+    *(pp+1) = '\0';	
+
+    return(word);         
+}

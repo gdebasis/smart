@@ -1,0 +1,29 @@
+Directory  /smart/src/libprint
+        Source library for printing SMART objects to either
+        memory or a file
+
+The source files in this directory fall into one of the 
+following types, with the name of the file giving the type:
+
+p_*.c   Low-level print procedures to print 
+        individual smart tuples to incore buffer
+
+pi_*.c  Low level print procedures to print interpreted smart 
+        tuples (ie, what the smart tuple describes instead 
+        of the smart tuple itself) to buffer
+
+po_*.c  Low level print procedures to print a set of 
+        interpreted smart objects (ie, what the smart object 
+        describes) to a buffer
+
+ph_*.c  Low level hierarchy print procedures to print interpreted 
+        individual smart tuples to a buffer.
+
+phl_*.c	Same as ph_*.c but assume that the docids are always
+	"crammed part lists" and formats them accordingly.
+
+pobj_*.c  Mid level hierarchy procedures to print entire 
+        relational objects to a file.  Calls one or more of 
+        low level procedures above.
+
+print.c  Top level hierarchy procedure to call one of pobj_*.c.

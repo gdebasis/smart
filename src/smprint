@@ -1,0 +1,58 @@
+#!/usr/bin/csh
+# Print the given relation
+
+set bin = /mnt/sdb2/smart/src/bin
+set spec_file = /mnt/sdb2/smart/lib/spec.default
+set begin_id = 0
+set end_id = 2147483647
+
+if ($#argv < 2) then
+        echo 'Usage: smprint [-b begin_id] [-e end_id] [-s spec_file] objtype filename'
+        exit
+endif
+
+while ("$1" == "-b" || "$1" == "-e" || "$1" == "-s")
+        switch ($1)
+                case "-b":
+                        set begin_id = $2
+                        shift
+                        shift
+                        breaksw
+                case "-e":
+                        set end_id = $2
+                        shift
+                        shift
+                        breaksw
+                case "-s":
+                        set spec_file = $2
+                        shift
+                        shift
+                        breaksw
+        endsw
+end
+
+if ($#argv < 2) then
+        echo 'Usage: smprint [-b begin_id] [-e end_id] [-s spec_file] objtype filename'
+        exit
+endif
+
+set objtype = $1
+set filename = ($argv[2-])
+
+set prefix = ""
+set local = `$bin/smart print $spec_file proc print.obj.proc in print.obj | awk '$1 == target {print $1}' target=$objtype`
+if ("$local" != $objtype) then
+    set prefix = local.
+    set local = `$bin/smart print $spec_file proc print.obj.proc in local.print.obj | awk '$1 == target' target=$objtype`
+    if ("$local" != $objtype) then
+	echo "smprint: objtype of $1 not found"
+	$bin/smart print $spec_file proc print.obj.proc in print.obj | tail +3
+	$bin/smart print $spec_file proc print.obj.proc in local.print.obj | tail +4
+	exit 1
+    endif
+endif
+
+#echo "$bin/smart print $spec_file  global_start $begin_id  global_end $end_id \
+#                       proc ${prefix}print.obj.$objtype  in $filename"
+$bin/smart print $spec_file  global_start $begin_id  global_end $end_id \
+                       proc ${prefix}print.obj.$objtype  in "$filename"

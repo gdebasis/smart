@@ -1,0 +1,234 @@
+#ifdef RCSID
+static char rcsid[] = "$Header: /home/smart/release/src/libindexing/synt_phrase.c,v 11.2 1993/02/03 16:49:43 smart Exp $";
+#endif
+
+/* Copyright (c) 1991, 1990, 1984 - Gerard Salton, Chris Buckley. 
+
+   Permission is granted for use of this file in unmodified form for
+   research purposes. Please contact the SMART project to obtain 
+   permission for other uses.
+*/
+
+/********************   PROCEDURE DESCRIPTION   ************************
+ *0 
+ *1
+ *2 text_boolvec_obj (text_file, vec_file, inst)
+ *3   char *text_file;
+ *3   char *vec_file;
+ *3   int inst;
+
+ *4 init_text_boolvec_obj (spec, unused)
+ *4 close_text_boolvec_obj (inst)
+
+ *7 Input format: each line contains the filter for one query in the 
+ *7 following format:
+ *7 <qid> term1 term2 (term3 term4)
+ *7 This is interpreted as term1 AND term2 AND (term3 OR term4).
+ *7 The output vector for the above is: 
+ *7	ctype 0: term1
+ *7	ctype 1: term2
+ *7	ctype 2: term3, term4
+***********************************************************************/
+
+#include "common.h"
+#include "param.h"
+#include "functions.h"
+#include "smart_error.h"
+#include "spec.h"
+#include "trace.h"
+#include "proc.h"
+#include "inst.h"
+#include "io.h"
+#include "vector.h"
+#include "fdbk_stats.h"
+#include <ctype.h>
+#include <string.h>
+#include <unistd.h>
+
+static PROC_TAB *tokcon;
+static long rwmode;
+static SPEC_PARAM spec_args[] = {
+    {"convert.text_bool.token_to_con", getspec_func, (char *)&tokcon},
+    {"convert.text_bool.vec_file.rwmode", getspec_filemode, (char *)&rwmode},
+    TRACE_PARAM ("convert.text_bool.trace")
+};
+static int num_spec_args = sizeof (spec_args) / sizeof (spec_args[0]);
+
+static int tokcon_inst;
+
+static int comp_con();
+
+
+int
+init_text_boolvec_obj (spec, unused)
+SPEC *spec;
+char *unused;
+{
+    if (UNDEF == lookup_spec (spec, &spec_args[0], num_spec_args))
+	return (UNDEF);
+
+    PRINT_TRACE (2, print_string, "Trace: entering init_text_boolvec_obj");
+
+    if (UNDEF == (tokcon_inst = tokcon->init_proc(spec, "index.section.word.")))
+	return(UNDEF);
+
+    PRINT_TRACE (2, print_string, "Trace: leaving init_text_boolvec_obj");
+    return 0;
+}
+
+int
+text_boolvec_obj (text_file, vec_file, inst)
+char *text_file;
+char *vec_file;
+int inst;
+{
+    char inbuf[PATH_LEN], *token, *c, saved_c;
+    int vec_fd;
+    long qid, ctype, num_conwt, max_ctype, max_conwt, start_ctype, con;
+    long *ctype_len;
+    FILE *in_fp;
+    CON_WT *con_wtp;
+    VEC vec;
+
+    PRINT_TRACE (2, print_string, "Trace: entering text_boolvec_obj");
+
+    /* Open files */
+    if (VALID_FILE (text_file)) {
+        if (NULL == (in_fp = fopen (text_file, "r")))
+            return (UNDEF);
+    }
+    else
+        in_fp = stdin;
+    if (UNDEF == (vec_fd = open_vector(vec_file, rwmode)))
+	return (UNDEF);
+
+    max_ctype = 10;
+    max_conwt = 20;
+    if (NULL == (ctype_len = Malloc(max_ctype, long)) ||
+	NULL == (con_wtp = Malloc(max_conwt, CON_WT)))
+	return(UNDEF);
+
+    /* Assumes input line is reasonably well-behaved i.e. error
+     * condition checking is not entirely thorough.
+     */
+    while (NULL != fgets (inbuf, PATH_LEN, in_fp)) {
+	qid = atol(inbuf);
+	if (qid < global_start) continue;
+	if (qid > global_end) break;
+	vec.id_num.id = qid; EXT_NONE(vec.id_num.ext);
+
+	c = inbuf;
+	/* skip over the query id */
+	while (isdigit(*c)) c++;
+
+	ctype = num_conwt = 0;
+	while (*c) {
+	    while (isspace(*c)) c++;
+	    if (ctype >= max_ctype) {
+		max_ctype *= 2;
+		if (NULL == (ctype_len = Realloc(ctype_len, max_ctype, long)))
+		    return(UNDEF);
+	    }
+	    if (*c == '(') {
+		/* OR clause */
+		c++; 
+		ctype_len[ctype] = 0;
+		start_ctype = num_conwt;
+		while (*c != ')') {
+		    while (isspace(*c)) c++;
+		    token = c++;
+		    while (!isspace(*c) && *c != ')') {
+			*c = tolower(*c);
+			c++;
+		    }
+		    saved_c = *c;
+		    *c = '\0';
+		    if (UNDEF == tokcon->proc(token, &con, tokcon_inst))
+			return(UNDEF);
+		    if (num_conwt >= max_conwt) {
+			max_conwt *= 2;
+			if (NULL == (con_wtp = Realloc(con_wtp, max_conwt, CON_WT)))
+			    return(UNDEF);
+		    }
+		    con_wtp[num_conwt++].con = con;
+		    ctype_len[ctype]++;
+		    *c = saved_c;
+		}
+		qsort(con_wtp + start_ctype, ctype_len[ctype], sizeof(CON_WT), 
+		      comp_con);
+		ctype++;
+		c++;
+	    }
+	    else if (*c) {
+		/* AND clause */
+		token = c;
+		while (*c && !isspace(*c)) {
+		    *c = tolower(*c);
+		    c++;
+		}
+		saved_c = *c;
+		*c = '\0';
+		if (UNDEF == tokcon->proc(token, &con, tokcon_inst))
+		    return(UNDEF);
+		if (num_conwt >= max_conwt) {
+		    max_conwt *= 2;
+		    if (NULL == (con_wtp = Realloc(con_wtp, max_conwt, CON_WT)))
+			return(UNDEF);
+		}
+		con_wtp[num_conwt++].con = con;
+		ctype_len[ctype] = 1;
+		*c = saved_c;
+		ctype++;
+	    }
+	}
+
+	vec.num_ctype = ctype;
+	vec.ctype_len = ctype_len;
+	vec.num_conwt = num_conwt;
+	vec.con_wtp = con_wtp;
+	if (UNDEF == seek_vector(vec_fd, &vec) ||
+	    UNDEF == write_vector(vec_fd, &vec))
+	    return(UNDEF);
+    }
+
+    if (UNDEF == close_vector(vec_fd))
+        return (UNDEF);
+    fclose(in_fp); 
+
+    PRINT_TRACE (2, print_string, "Trace: leaving text_boolvec_obj");
+    return 0;
+}
+
+int
+close_text_boolvec_obj (inst)
+int inst;
+{
+    PRINT_TRACE (2, print_string, "Trace: entering close_text_boolvec_obj");
+
+    if (UNDEF == tokcon->close_proc(tokcon_inst))
+	return(UNDEF);
+
+    PRINT_TRACE (2, print_string, "Trace: leaving close_text_boolvec_obj");
+    return (0);
+}
+
+
+static int
+comp_con(c1, c2)
+CON_WT *c1, *c2;
+{
+    if (c1->con > c2->con)
+	return 1;
+    if (c1->con < c2->con)
+	return -1;
+    return 0;
+}
+
+
+
+
+
+
+
+
+

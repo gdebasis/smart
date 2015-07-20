@@ -1,0 +1,40 @@
+#ifndef PARAMH
+#define PARAMH
+/*$Header: /home/smart/release/src/h/param.h.notrace,v 11.2 1993/02/03 16:47:55 smart Exp $*/
+/* This file contains system dependent flags, tunable parameters, and */
+/* defined constants */
+
+/* Default pagination and editor which can be invoked when */
+/*  displaying documents ( see src/libtop/inter.c ) */
+#define DEF_PAGE    "/usr/ucb/more -s"
+#define DEF_EDITOR  "/usr/ucb/vi"
+
+/* Maximum full pathname allowed by SMART (and BSD 4.2) */
+#define PATH_LEN        1024
+
+#define MAX_TOKEN_LEN   1024
+
+/* Accounting flag.  If defined for machines other than sun,
+   libprint/p_account.c should be examined and corrected. */
+/* #define ACCOUNTING */
+
+/* Define if mmap facility exists to directly map a file into memory (much
+   faster (less paging) than reading the entire file into memory
+   explicitly).  Used in libdatabase/{open,close}_direct.c.
+   Also used in libfile/open_dict.c.
+   Code may have to be altered if mmap variant different from Sun's.
+   Note: used only on RDONLY files */
+#define MMAP
+
+/* If selective tracing facilities are wanted, define TRACE.  Not terribly */
+/* expensive, so might as well leave defined. */ 
+/* #define TRACE */
+
+#define VALID_FILE(x) (! ((x) == NULL || *(x) == '\0' || *(x) == '-'))
+
+/* Default dictionary size if creating dict with no other info  (most
+   applications will indicate a desired size) */
+#define DEFAULT_DICT_SIZE 30001
+
+#endif /* PARAMH */
+

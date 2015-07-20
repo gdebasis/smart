@@ -1,0 +1,23 @@
+gcc -I/home/debasis/smart/src/h -I/home/debasis/smart/src/liblocal/h -L/home/debasis/smart/src/lib -O -gstabs+ -Wall   -c -o copy.o copy.c
+copy.c:21:20: error: common.h: No such file or directory
+copy.c:22:19: error: param.h: No such file or directory
+copy.c:23:23: error: functions.h: No such file or directory
+copy.c:24:16: error: io.h: No such file or directory
+copy.c:25:25: error: smart_error.h: No such file or directory
+copy.c: In function ‘copy’:
+copy.c:39: warning: implicit declaration of function ‘open’
+copy.c:39: error: ‘SRDONLY’ undeclared (first use in this function)
+copy.c:39: error: (Each undeclared identifier is reported only once
+copy.c:39: error: for each function it appears in.)
+copy.c:40: warning: implicit declaration of function ‘set_error’
+copy.c:40: error: ‘errno’ undeclared (first use in this function)
+copy.c:41: error: ‘UNDEF’ undeclared (first use in this function)
+copy.c:57: warning: implicit declaration of function ‘creat’
+copy.c:64: warning: implicit declaration of function ‘read’
+copy.c:65: warning: implicit declaration of function ‘write’
+copy.c:75: warning: implicit declaration of function ‘close’
+copy.c: In function ‘copy_fd’:
+copy.c:102: warning: implicit declaration of function ‘lseek’
+copy.c:108: error: ‘errno’ undeclared (first use in this function)
+copy.c:109: error: ‘UNDEF’ undeclared (first use in this function)
+make: *** [copy.o] Error 1

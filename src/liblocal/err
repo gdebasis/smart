@@ -1,0 +1,35 @@
+for dir in libproc libretrieve libconvert libindexing libfile libprint libcombtr libfeedback libinter libocr ;\
+                do cd $dir ;\
+                make -k "default" "CFLAGS=" PREFIX= ; \
+                cd ..;\
+        done
+make[1]: Entering directory `/home/debasis/smart/src/liblocal/libproc'
+make[1]: *** No rule to make target `default'.
+make[1]: Leaving directory `/home/debasis/smart/src/liblocal/libproc'
+make[1]: Entering directory `/home/debasis/smart/src/liblocal/libretrieve'
+make[1]: *** No rule to make target `default'.
+make[1]: Leaving directory `/home/debasis/smart/src/liblocal/libretrieve'
+make[1]: Entering directory `/home/debasis/smart/src/liblocal/libconvert'
+make[1]: *** No rule to make target `default'.
+make[1]: Leaving directory `/home/debasis/smart/src/liblocal/libconvert'
+make[1]: Entering directory `/home/debasis/smart/src/liblocal/libindexing'
+make[1]: *** No rule to make target `default'.
+make[1]: Leaving directory `/home/debasis/smart/src/liblocal/libindexing'
+make[1]: Entering directory `/home/debasis/smart/src/liblocal/libfile'
+make[1]: *** No rule to make target `default'.
+make[1]: Leaving directory `/home/debasis/smart/src/liblocal/libfile'
+make[1]: Entering directory `/home/debasis/smart/src/liblocal/libprint'
+make[1]: *** No rule to make target `default'.
+make[1]: Leaving directory `/home/debasis/smart/src/liblocal/libprint'
+make[1]: Entering directory `/home/debasis/smart/src/liblocal/libcombtr'
+make[1]: *** No rule to make target `default'.
+make[1]: Leaving directory `/home/debasis/smart/src/liblocal/libcombtr'
+make[1]: Entering directory `/home/debasis/smart/src/liblocal/libfeedback'
+make[1]: *** No rule to make target `default'.
+make[1]: Leaving directory `/home/debasis/smart/src/liblocal/libfeedback'
+make[1]: Entering directory `/home/debasis/smart/src/liblocal/libinter'
+make[1]: *** No rule to make target `default'.
+make[1]: Leaving directory `/home/debasis/smart/src/liblocal/libinter'
+make[1]: Entering directory `/home/debasis/smart/src/liblocal/libocr'
+make[1]: *** No rule to make target `default'.
+make[1]: Leaving directory `/home/debasis/smart/src/liblocal/libocr'
